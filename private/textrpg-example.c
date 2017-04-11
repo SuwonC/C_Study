@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <windows.h>
 
 char name[50];
 int lv = 1;
