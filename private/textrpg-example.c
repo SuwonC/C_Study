@@ -9,7 +9,7 @@ int atk = 10;
 int def = 10;
 int hp = 100;
 int maxhp = 100;
-int burning = 1;
+int burning = 1;//경험치버닝, 1당 100%, 0일경우 흭득불가, 0이하일경우 오히려 떨어짐.
 
 void startGame(void) {
 	system("cls");
