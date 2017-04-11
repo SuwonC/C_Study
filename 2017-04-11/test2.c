@@ -10,7 +10,7 @@ int main(void) {
   int i;
   for (i = 1;i<=5;i++) {printf("%d번째 값을 입력해주세요 : ",i);scanf("%d",&arr[i-1]);}
   printf("입력한 5개의 값중 최댓값은 %d, 최솟값은 %d입니다.", getMinInt(arr, 5), getMaxInt(arr,5));
-	return 0;
+  return 0;
 }
 
 int maxInt(int p1, int p2) {
