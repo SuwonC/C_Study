@@ -8,9 +8,7 @@ int main(void) {
 	for (j = 1; j <= i; j ++) {
 		if (j%2 == i%2) {
 			printf("=-=-=-=-= %d단 =-=-=-=-=\n", j);
-			for (k = 1; k <= i; k ++) {
-				printf("%d x %d = %d\n", j, k, j*k);
-			}
+			for (k = 1; k <= i; k ++) printf("%d x %d = %d\n", j, k, j*k);
 			printf("\n");
 		}
 	}
