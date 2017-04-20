@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-	int i, j,k,l,m;
+	int i,k,l,m;
 	for (i = 1; i <= 9; i ++) {
 		k = 5-i;
 		l = i-5;
