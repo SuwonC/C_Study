@@ -1,15 +1,24 @@
 #include <stdio.h>
 
+int j = 9;
+
 int main(void) {
-	int i,k,l,m;
-	for (i = 1; i <= 9; i ++) {
-		k = 5-i;
-		l = i-5;
-		for (m = -4; m <= 4; m ++) {
-			if (k == m || l == m) printf("#");
-			else printf(" ");
+	system("cls");
+	printf("원하는 수를 입력해주세요. (홀수만 입력해주세요!) : ");
+	scanf("%d", &j);
+	if (j%2 == 0) {
+		main();
+	} else {
+		int i,k,l,m;
+		for (i = 0; i <= j; i ++) {
+			k = j-i;
+			l = i+1;
+			for (m = 1; m <= j; m ++) {
+				if (k == m || l == m) printf("#");
+				else printf(" ");
+			}
+			printf("\n");
 		}
-		printf("\n");
 	}
 	return 0;
 }
