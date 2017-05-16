@@ -9,17 +9,23 @@
 //5. 연산 함수, 연산 시도 함수, 메인화면으로 돌아갈지 묻는 함수를 두어 작동시킨다.
 //추가 > return 0;을 하려고 하니 void형식이라서 경고 메시지가 뜬다. exit();을 이용한다.
 
-int readInt();
-double readDouble();
+//함수 정의
+//연산 부분. 2개의 인자를 받고 연산을 한 후 연산된 값을 리턴.
 int add(int, int);
 int sub(int, int);
 int mul(int, int);
 int div(int, int);
+//scanf을 읽는부분. readInt 이랑 scanInt랑 작동 방식이 같게 구현함.
 int scanInt();
+int readInt();
+double scanDouble();
+double readDouble();
+//실행 부분
 void doPlus();
 void doMinus();
 void doTimes();
 void doDivided_by();
+//메인 돌아가는 부분
 void doGoMain();
 
 int main(void) {
@@ -49,18 +55,6 @@ int main(void) {
 	}
 }
 
-int readInt() {
-	int num;
-	scanf("%d", &num);
-	return num;
-}
-
-double readDouble() {
-	double num;
-	scanf("%lf", &num);
-	return num;
-}
-
 int add(int num1, int num2) {
 	return num1 + num2;
 }
@@ -77,9 +71,23 @@ int div(int num1, int num2) {
 	return num1 / num2;
 }
 
+int readInt() {
+	return scanInt();
+}
+
+double readDouble() {
+	return scanDouble();
+}
+
 int scanInt() {
 	int num;
 	scanf("%d", &num);
+	return num;
+}
+
+double scanDouble() {
+	double num;
+	scanf("%lf", &num);
 	return num;
 }
 
