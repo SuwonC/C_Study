@@ -12,6 +12,7 @@
 //사용자 지정 함수를 여기서도 쓰고 밑에서도 쓰는 이유가 어디서나 쓸 수 있게끔 하기 위해서이다.
 //자신 함수보다 아래쪽에 작성한 함수를 이용하려고 시도할 시 오류를 내므로 맨 위에서부터 선언해주어 어디에서나 사용가능하게 해준다.
 //이 내용이 맞는진 모르겠지만 어디서나 쓸 수 있게는 된다.
+
 int readInt();
 double readDouble();
 int add(int num1, int num2);
@@ -44,7 +45,8 @@ int main(void) {
 			doDivided_by();
 			break;
 		case 5:
-			return 0;
+			exit();
+			break;
 		default:
 			main();
 			break;
@@ -91,7 +93,8 @@ void doGoMain() {
 	scanf("%d", &num);
 	switch (num) {
 	case 1:
-		return 0;
+		exit();
+		break;
 	default:
 		main();
 		break;
