@@ -11,10 +11,10 @@
 
 int readInt();
 double readDouble();
-int add(int num1, int num2);
-int sub(int num1, int num2);
-int mul(int num1, int num2);
-int div(int num1, int num2);
+int add(int, int);
+int sub(int, int);
+int mul(int, int);
+int div(int, int);
 int scanInt();
 void doPlus();
 void doMinus();
@@ -28,24 +28,24 @@ int main(void) {
 	int num;
 	scanf("%d", &num);
 	switch (num) {
-		case 1:
-			doPlus();
-			break;
-		case 2:
-			doMinus();
-			break;
-		case 3:
-			doTimes();
-			break;
-		case 4:
-			doDivided_by();
-			break;
-		case 5:
-			exit();
-			break;
-		default:
-			main();
-			break;
+	case 1:
+		doPlus();
+		break;
+	case 2:
+		doMinus();
+		break;
+	case 3:
+		doTimes();
+		break;
+	case 4:
+		doDivided_by();
+		break;
+	case 5:
+		exit();
+		break;
+	default:
+		main();
+		break;
 	}
 }
 
