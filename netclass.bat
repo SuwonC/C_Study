@@ -9,7 +9,12 @@ echo  │                    │             │                    │
 echo  └──────────┘             └──────────┘
 echo  ┌──────────┐             ┌──────────┐
 echo  │                    │             │                    │
-echo  │3. 개발자 홈페이지  │             │4. 프로그램 종료    │
+echo  │3. 개발자 홈페이지  │             │4, 넷클래스 실행    │
+echo  │                    │             │                    │
+echo  └──────────┘             └──────────┘
+echo  ┌──────────┐             ┌──────────┐
+echo  │                    │             │                    │
+echo  │5. 프로그램 종료    │             │아무키. 재시작      │
 echo  │                    │             │                    │
 echo  └──────────┘             └──────────┘
 echo ==============================================================
@@ -17,7 +22,8 @@ set /p in=원하시는 행동에 적힌 숫자를 입력해주세요 :
 if %in% == 1 goto a
 if %in% == 2 goto b
 if %in% == 3 goto author
-if %in% == 4 goto end
+if %in% == 4 goto start
+if %in% == 5 goto end
 goto message
 :a
 taskkill /F /IM NetClassClient8.exe
@@ -35,6 +41,10 @@ goto a
 :author
 cls
 explorer http://github.com/SuwonC
+goto message
+:start
+call "C:\Program Files\NetClassClient8\NetClassClient8.exe"
+pause
 goto message
 :end
 exit
