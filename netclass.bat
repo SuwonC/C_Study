@@ -19,10 +19,12 @@ if %in% == 2 goto b
 if %in% == 3 goto author
 if %in% == 4 goto end
 goto message
-:b
-taskkill /F /IM NetClassClient8.exe
-goto b
 :a
+taskkill /F /IM NetClassClient8.exe
+cls
+@echo 인터넷 잠금 강제종료 동작중
+goto b
+:b
 taskkill /F /IM NetScreenCapture.exe
 taskkill /F /IM NetClassClient8.exe
 taskkill /F /IM MoniteringNC8Service.exe
