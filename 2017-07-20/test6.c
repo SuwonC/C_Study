@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main(void) {
-	printf("%d", stcmp("ABCD", "ABCC"));
-	printf("%d", stcmp("ABCD", "ABCDE"));
+	printf("%d", strcmp("ABCD", "ABCC"));
+	printf("%d", strcmp("ABCD", "ABCDE"));
 	return 0;
 }
