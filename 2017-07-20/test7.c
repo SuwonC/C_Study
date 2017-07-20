@@ -5,6 +5,9 @@ struct point {//point라는 이름의 구조체 정의
 	int ypos;//point 구조체를 구성하는 멤버 ypos
 };
 
+//int가 자료형의 이름인 것 처럼 point도 자료형의 이름이다!
+//단, 프로그래머가 정의 한 자료형이기 때문에 사용자 정의 자료형 (user defined data type)이라 한다.
+
 struct person {
 	char name[20];//이름 저장
 	char phoneNum[20];//전화번호 저장
