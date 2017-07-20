@@ -28,3 +28,5 @@ int main(void) {
 	printf("%d", man.age);
 	return 0;
 }
+
+typedef struct person Person;//이제부터 Person per;라고 선언도 가능.
