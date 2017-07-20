@@ -13,3 +13,13 @@ struct person {
 	char phoneNum[20];//전화번호 저장
 	int age;//나이 저장
 };//배열도 구조체의 멤버로 선언이 가능함!
+
+struct point pos;
+struct person man;//구조체 변수선언의 예
+
+//멤버 접근은?
+int main(void) {
+	man.age = 1;
+	printf("%d", man.age);
+	return 0;
+}
