@@ -11,6 +11,11 @@ int hp = 100;
 int maxhp = 100;
 int burning = 1;//경험치버닝, 1당 100%, 0일경우 흭득불가, 0이하일경우 오히려 떨어짐.
 
+void startGame(void);
+int getMaxExp(int l);
+int main(void);
+
+
 void startGame(void) {
 	system("cls");
 	printf("Hello %s!\n", name);
@@ -31,7 +36,8 @@ void startGame(void) {
 		char doi1[50];
 		scanf("%s", doi1);
 		startGame();
-	} else if (doi2 == 2) {
+	}
+	else if (doi2 == 2) {
 		system("cls");
 		printf("Your Lv : %d\n", lv);
 		printf("=-=-=-=-= Field List =-=-=-=-=\n");
@@ -44,10 +50,11 @@ void startGame(void) {
 		system("cls");
 		if (doo == 1) {
 			if (lv < 1) {
-				printf("This Field REQ Lv : %d\nYour Lv : %d\nReturn Town...",1,lv);
+				printf("This Field REQ Lv : %d\nYour Lv : %d\nReturn Town...", 1, lv);
 				Sleep(1000);
 				startGame();
-			} else {
+			}
+			else {
 				int flag = 0;
 				int mobhp = 200;
 				int mobmhp = 200;
@@ -56,10 +63,10 @@ void startGame(void) {
 				int mobexp = 300 * burning;
 				int mobgold = 20 * burning;
 				char mobname[20] = "Crocodile";
-				while(flag == 0) {
-					Sleep(500);
+				while (flag == 0) {
+					Sleep(200);
 					int dmg1 = atk - mobdef;
-					if (dmg1 < 0) {dmg1 = 0;}
+					if (dmg1 < 0) { dmg1 = 0; }
 					mobhp = mobhp - dmg1;
 					printf("Player Attack to %s / Damage : %d\n", mobname, dmg1);
 					printf("Now MobHP : %d/%d\n", mobhp, mobmhp);
@@ -69,7 +76,7 @@ void startGame(void) {
 						gold = gold + mobgold;
 						exp = exp + mobexp;
 						int flags = 0;
-						while(flags == 0) {
+						while (flags == 0) {
 							if (exp >= getMaxExp(lv)) {
 								exp = exp - getMaxExp(lv);
 								lv = lv + 1;
@@ -78,17 +85,19 @@ void startGame(void) {
 								hp = hp + 10;
 								maxhp = maxhp + 10;
 								printf("Level Up! %d\n", lv);
-							} else {
+							}
+							else {
 								flags = 1;
 							}
 						}
 						printf("Return Town....");
 						Sleep(3000);
 						startGame();
-					} else {
+					}
+					else {
 						Sleep(500);
 						int dmg2 = mobatk - def;
-						if (dmg2 < 0) {dmg2 = 0;}
+						if (dmg2 < 0) { dmg2 = 0; }
 						hp = hp - dmg2;
 						printf("%s Attack to Player / Damage : %d\n", mobname, dmg2);
 						printf("Now PlayerHP : %d/%d\n", hp, maxhp);
@@ -102,12 +111,14 @@ void startGame(void) {
 					}
 				}
 			}
-		} else if (doo == 2) {
+		}
+		else if (doo == 2) {
 			if (lv < 30) {
-				printf("This Field REQ Lv : %d\nYour Lv : %d\nReturn Town...",30,lv);
+				printf("This Field REQ Lv : %d\nYour Lv : %d\nReturn Town...", 30, lv);
 				Sleep(1000);
 				startGame();
-			} else {
+			}
+			else {
 				int flag = 0;
 				int mobhp = 700;
 				int mobmhp = 700;
@@ -115,11 +126,11 @@ void startGame(void) {
 				int mobdef = 40;
 				int mobexp = 3250 * burning;
 				int mobgold = 40 * burning;
-				char mobname[20] = "Crocodile";
-				while(flag == 0) {
-					Sleep(500);
+				char mobname[20] = "Golem";
+				while (flag == 0) {
+					Sleep(200);
 					int dmg1 = atk - mobdef;
-					if (dmg1 < 0) {dmg1 = 0;}
+					if (dmg1 < 0) { dmg1 = 0; }
 					mobhp = mobhp - dmg1;
 					printf("Player Attack to %s / Damage : %d\n", mobname, dmg1);
 					printf("Now MobHP : %d/%d\n", mobhp, mobmhp);
@@ -129,7 +140,7 @@ void startGame(void) {
 						gold = gold + mobgold;
 						exp = exp + mobexp;
 						int flags = 0;
-						while(flags == 0) {
+						while (flags == 0) {
 							if (exp >= getMaxExp(lv)) {
 								exp = exp - getMaxExp(lv);
 								lv = lv + 1;
@@ -138,17 +149,19 @@ void startGame(void) {
 								hp = hp + 10;
 								maxhp = maxhp + 10;
 								printf("Level Up! %d\n", lv);
-							} else {
+							}
+							else {
 								flags = 1;
 							}
 						}
 						printf("Return Town....");
 						Sleep(3000);
 						startGame();
-					} else {
+					}
+					else {
 						Sleep(500);
 						int dmg2 = mobatk - def;
-						if (dmg2 < 0) {dmg2 = 0;}
+						if (dmg2 < 0) { dmg2 = 0; }
 						hp = hp - dmg2;
 						printf("%s Attack to Player / Damage : %d\n", mobname, dmg2);
 						printf("Now PlayerHP : %d/%d\n", hp, maxhp);
@@ -162,12 +175,14 @@ void startGame(void) {
 					}
 				}
 			}
-		} else if (doo == 3) {
+		}
+		else if (doo == 3) {
 			if (lv < 50) {
-				printf("This Field REQ Lv : %d\nYour Lv : %d\nReturn Town...",50,lv);
+				printf("This Field REQ Lv : %d\nYour Lv : %d\nReturn Town...", 50, lv);
 				Sleep(1000);
 				startGame();
-			} else {
+			}
+			else {
 				int flag = 0;
 				int mobhp = 3000;
 				int mobmhp = 3000;
@@ -175,11 +190,11 @@ void startGame(void) {
 				int mobdef = 600;
 				int mobexp = 8750 * burning;
 				int mobgold = 80 * burning;
-				char mobname[20] = "Crocodile";
-				while(flag == 0) {
-					Sleep(500);
+				char mobname[20] = "Magicion";
+				while (flag == 0) {
+					Sleep(200);
 					int dmg1 = atk - mobdef;
-					if (dmg1 < 0) {dmg1 = 0;}
+					if (dmg1 < 0) { dmg1 = 0; }
 					mobhp = mobhp - dmg1;
 					printf("Player Attack to %s / Damage : %d\n", mobname, dmg1);
 					printf("Now MobHP : %d/%d\n", mobhp, mobmhp);
@@ -189,7 +204,7 @@ void startGame(void) {
 						gold = gold + mobgold;
 						exp = exp + mobexp;
 						int flags = 0;
-						while(flags == 0) {
+						while (flags == 0) {
 							if (exp >= getMaxExp(lv)) {
 								exp = exp - getMaxExp(lv);
 								lv = lv + 1;
@@ -198,17 +213,19 @@ void startGame(void) {
 								hp = hp + 10;
 								maxhp = maxhp + 10;
 								printf("Level Up! %d\n", lv);
-							} else {
+							}
+							else {
 								flags = 1;
 							}
 						}
 						printf("Return Town....");
 						Sleep(3000);
 						startGame();
-					} else {
+					}
+					else {
 						Sleep(500);
 						int dmg2 = mobatk - def;
-						if (dmg2 < 0) {dmg2 = 0;}
+						if (dmg2 < 0) { dmg2 = 0; }
 						hp = hp - dmg2;
 						printf("%s Attack to Player / Damage : %d\n", mobname, dmg2);
 						printf("Now PlayerHP : %d/%d\n", hp, maxhp);
@@ -222,12 +239,12 @@ void startGame(void) {
 					}
 				}
 			}
-		} else if (doo == 4) {
-			hp = maxhp;
-		} else {
+		}
+		else {
 			startGame();
 		}
-	} else if (doi2 == 3) {
+	}
+	else if (doi2 == 3) {
 		system("cls");
 		printf("=-=-=-=-= Training Center =-=-=-=-=\n");
 		printf("1. ATK + 1 (Cost : 1000)\n");
@@ -246,48 +263,63 @@ void startGame(void) {
 		system("cls");
 		if (dooo == 1) {
 			if (gold < 1000) {
-				printf("Cost : 1000\nYour Gold : %d\nReturn Town...\n",gold);
+				printf("Cost : 1000\nYour Gold : %d\nReturn Town...\n", gold);
 				Sleep(1000);
 				startGame();
-			} else {
+			}
+			else {
 				gold = gold - 1000;
 				atk = atk + 1;
 				printf("SUCCESS Training!\nREWAND : GOLD - 1000, ATK + 1");
 				Sleep(1000);
 				startGame();
 			}
-		} else if (dooo == 2) {
+		}
+		else if (dooo == 2) {
 			if (gold < 9000) {
-				printf("Cost : 9000\nYour Gold : %d\nReturn Town...\n",gold);
+				printf("Cost : 9000\nYour Gold : %d\nReturn Town...\n", gold);
 				Sleep(1000);
 				startGame();
-			} else {
+			}
+			else {
 				gold = gold - 9000;
 				atk = atk + 10;
 				printf("SUCCESS Training!\nREWAND : GOLD - 9000, ATK + 10");
 				Sleep(1000);
 				startGame();
 			}
-		} else if (dooo == 3) {
+		}
+		else if (dooo == 3) {
 			if (gold < 80000) {
-				printf("Cost : 1000\nYour Gold : %d\nReturn Town...\n",gold);
+				printf("Cost : 1000\nYour Gold : %d\nReturn Town...\n", gold);
 				Sleep(1000);
 				startGame();
-			} else {
+			}
+			else {
 				gold = gold - 80000;
 				atk = atk + 100;
 				printf("SUCCESS Training!\nREWAND : GOLD - 80000, ATK + 10");
 				Sleep(1000);
 				startGame();
 			}
-		} else {
+		}
+		else {
 			printf("Return Town...");
 			Sleep(1000);
 			startGame();
 		}
-	} else if (doi2 == 7) {
+	}
+	else if (doi2 == 4) {
+		system("cls");
+		hp = maxhp;
+		printf("Regen Health! Now Your HP : %d/%d", hp, maxhp);
+		Sleep(3000);
+		startGame();
+	}
+	else if (doi2 == 7) {
 		exit(1);
-	} else { 
+	}
+	else {
 		startGame();
 	}
 }
@@ -304,11 +336,13 @@ int main(void) {
 	scanf("%d", &i);
 	if (i == 1) {
 		startGame();
-	} else if (i == 2) {
+	}
+	else if (i == 2) {
 		printf("Restart...\n");
 		system("cls");
 		main();
-	} else {system("cls");main();}
+	}
+	else { system("cls"); main(); }
 	/////////////////////////////////////////////////
 	//%s : 문자열 표시 하는데 쓰입니다. 그렇다구요 뭐.....//
 	//%d : 부호가 있는 10진수 형태로 정수를 출력하는거에요!//
