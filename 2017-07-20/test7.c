@@ -15,7 +15,12 @@ struct person {
 };//배열도 구조체의 멤버로 선언이 가능함!
 
 struct point pos;
-struct person man;//구조체 변수선언의 예
+struct person man, woman;//구조체 변수선언의 예
+
+struct baka {
+	int age;
+	char name[20];
+} b1, b2, b3;
 
 //멤버 접근은?
 int main(void) {
